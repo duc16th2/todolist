@@ -1,0 +1,93 @@
+<!-- views/success.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TodoList</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <!-- load bulma css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- load fontawesome -->
+    <style>
+      .logout,
+      .delete {
+        padding: 8px 10px;
+        background-color: red;
+        color: white;
+      }
+
+      .checked {
+        background: #888;
+        color: #fff;
+        /* text-decoration: line-through; */
+      }
+      .line-through {
+        text-decoration: line-through;
+      }
+      .hide {
+        display: none;
+      }
+      a {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light d-flex justify-content-between">
+      <a class="navbar-brand" href="#">
+        <img
+          src="/docs/4.0/assets/brand/bootstrap-solid.svg"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+        />
+        <%= user.displayName %>
+      </a>
+      <a class="logout" href="/logout">Logout</a>
+    </nav>
+
+    <div class="container mt-5">
+      <form action="/success/add/todo" method="POST" class="form-group d-flex">
+        <input
+          type="text"
+          name="todo"
+          placeholder="enter"
+          class="form-control mr-3"
+        />
+        <input type="submit" class="btn btn-primary" value="add" />
+      </form>
+    </div>
+
+    <ul class="list-group mt-3 container">
+      <% todos.forEach(todo=>{ %> <% if(todo.status !== 'done'){ %>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between">
+          <p><%= todo.todo %></p>
+          <div>
+            <button class="btn btn-primary done">
+              <a href="todos/todo/done/<%= todo._id %>">done</a>
+            </button>
+            <a class="delete" href="/delete/todos/<%= todo._id %>">Delete</a>
+          </div>
+        </div>
+      </li>
+      <% }else{ %>
+      <li class="list-group-item checked">
+        <div class="d-flex justify-content-between">
+          <p class="line-through"><%= todo.todo %></p>
+          <div>
+            <a class="delete" href="/delete/todos/<%= todo._id %>">Delete</a>
+          </div>
+        </div>
+      </li>
+      <% } %> <% }) %>
+    </ul>
+    <script></script>
+  </body>
+</html>
