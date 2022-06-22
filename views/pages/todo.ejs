@@ -22,9 +22,8 @@
       }
 
       .checked {
-        background: #888;
+        background: rgb(105, 163, 205);
         color: #fff;
-        /* text-decoration: line-through; */
       }
       .line-through {
         text-decoration: line-through;
@@ -41,7 +40,7 @@
     <nav class="navbar navbar-light bg-light d-flex justify-content-between">
       <a class="navbar-brand" href="#">
         <img
-          src="/docs/4.0/assets/brand/bootstrap-solid.svg"
+          src="<%= user.photos[0].value %>"
           width="30"
           height="30"
           class="d-inline-block align-top"
@@ -52,8 +51,8 @@
       <a class="logout" href="/logout">Logout</a>
     </nav>
 
-    <div class="container mt-5">
-      <form action="/success/add/todo" method="POST" class="form-group d-flex">
+    <div class="container mt-5 p-0">
+      <form action="/todos" method="POST" class="form-group d-flex">
         <input
           type="text"
           name="todo"
@@ -71,9 +70,11 @@
           <p><%= todo.todo %></p>
           <div>
             <button class="btn btn-primary done">
-              <a href="todos/todo/done/<%= todo._id %>">done</a>
+              <a href="todos/done/<%= todo._id %>">done</a>
             </button>
-            <a class="delete" href="/delete/todos/<%= todo._id %>">Delete</a>
+            <button class="btn btn-danger">
+              <a href="todos/delete/<%= todo._id %>">Delete</a>
+            </button>
           </div>
         </div>
       </li>
@@ -82,7 +83,9 @@
         <div class="d-flex justify-content-between">
           <p class="line-through"><%= todo.todo %></p>
           <div>
-            <a class="delete" href="/delete/todos/<%= todo._id %>">Delete</a>
+            <button class="btn btn-danger">
+              <a href="todos/delete/<%= todo._id %>">Delete</a>
+            </button>
           </div>
         </div>
       </li>
