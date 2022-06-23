@@ -20,5 +20,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use("/todos", require("./router/todo.router"));
 app.use("", require("./router/auth.router"));
+app.get("/error", (req, res) => {
+  res.send(
+    "can not login with google, pls try again or check internet connection"
+  );
+});
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log("App listening on port " + port));

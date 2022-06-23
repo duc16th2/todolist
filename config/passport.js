@@ -1,8 +1,8 @@
 module.exports = function (passport) {
   const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
   const GOOGLE_CLIENT_ID =
-    "818740999529-mghl7g4lmfc89dhdf8f73r3n9ompnoqk.apps.googleusercontent.com";
-  const GOOGLE_CLIENT_SECRET = "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";
+    "818740999529-7q4nn3mq8jou5rvc6rbh8sqvmq9u52rk.apps.googleusercontent.com";
+  const GOOGLE_CLIENT_SECRET = "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";
   passport.use(
     new GoogleStrategy(
       {

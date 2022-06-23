@@ -2,27 +2,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Google SignIn</title>
+    <title>Todo List</title>
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
     />
-    <!-- load bulma css -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <!-- load fontawesome -->
     <style>
       body {
-        padding-top: 70px;
+        padding-top: 50px;
+      }
+      .div-container {
+        text-align: center;
+        color: #007bff;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron text-center text-primary">
-        <h1><span class="fa fa-lock"></span> Todolist</h1>
+      <div class="jumbotron div-container">
+        <i class="fa fa-book fa-4x" aria-hidden="true"></i>
+        <h1>Todolist</h1>
         <p>Login or Register with:</p>
         <a href="/auth/google" class="btn btn-danger"
           ><span class="fa fa-google"></span> SignIn with Google</a

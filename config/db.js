@@ -1,10 +1,10 @@
 module.exports = function (mongoose) {
   mongoose
-    .connect("mongodb://localhost:27017/todos")
+    .connect("mongodb://localhost:27017/todos1")
     .then(() => {
-      console.log("success");
+      console.log("connect db successful");
     })
     .catch(() => {
-      console.log("fail");
+      console.log("error to connect db");
     });
 };

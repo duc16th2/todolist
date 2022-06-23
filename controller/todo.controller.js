@@ -9,13 +9,13 @@ class TodoController {
 
   async addItem(req, res) {
     const todo = req.body;
-    await Todos.create({ todo: todo.todo, status: "not-done" });
+    await Todos.create({ todo: todo.todo, status: "incomplete" });
     res.redirect("/todos");
   }
 
   async doneItem(req, res) {
     const { _id } = req.params;
-    await Todos.updateOne({ _id }, { status: "done" });
+    await Todos.updateOne({ _id }, { status: "completed" });
     res.redirect("/todos");
   }
 
